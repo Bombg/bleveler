@@ -53,10 +53,17 @@ def StartFights():
         time.sleep(baseSettings.SECONDS_AFTER_BATTLE)
 
 if __name__ == "__main__":
+    nowTime = datetime.now(tzInfo)
+    dateString = nowTime.strftime("%d/%m/%Y")
+    hour = nowTime.hour
+    logger.info("bleveler started")
+    logger.info(f"Fights start at: {baseSettings.FIGHT_TIME} it's now {hour}")
     while True:
         nowTime = datetime.now(tzInfo)
         dateString = nowTime.strftime("%d/%m/%Y")
-        hour = nowTime.hour
+        if nowTime.hour != hour:
+            hour = nowTime.hour
+            logger.info(f"Fights start at: {baseSettings.FIGHT_TIME} it's now {hour}")
         if dateString not in fightsDone and hour == baseSettings.FIGHT_TIME:
             fightsDone[dateString] = 1
             StartFights()
