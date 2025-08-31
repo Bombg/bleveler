@@ -24,10 +24,14 @@ class Settings(BaseSettings):
         "Swuave",
         "Gobzz",
         "Mista_Jay24",
+        "nicholastoras01",
+        "UriLoufi",
+        "StoneySyrup",
+        "Nikione0one",
     ]
-    SECONDS_BETWEEN_BATTLES: int = 30
+    SECONDS_BETWEEN_BATTLES: int = 90
     SECONDS_AFTER_BATTLE:int = 5
     SECONDS_BETWEEN_FIGHT_CHECK:int = 60
     LOG_LEVEL:int = 20
     TZ:str = "America/Chicago"
-    FIGHT_TIME:int = 9
+    FIGHT_TIME:int = 10
